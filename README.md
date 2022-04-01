@@ -1,4 +1,4 @@
-# Coachingangebote API
+# Arbeitsagentur Coachingangebote API
 
 Eine der größten Datenbanken zu Coaching-/Aktivierungsangeboten Deutschlands durchsuchen.
 
