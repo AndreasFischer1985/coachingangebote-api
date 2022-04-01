@@ -139,7 +139,7 @@ paths:
                 - true
                 - false               
           description: DEUFOEV - true = (nur) Anbieter berufsbezogener Sprachförderung Deutsch (DeuFöV) anzeigen.
-          example: 0
+          example: true
           required: false
 
         - in: query
@@ -150,7 +150,7 @@ paths:
                 - ta
                 - tz               
           description: Sortierungskriterium - ta = Maßnahmetitel A-Z; tz = Maßnahmetitel Z-A.
-          example: 0
+          example: ta
           required: false
 
 
@@ -311,15 +311,19 @@ components:
                       zertifizierer:
                         type: array
                         items:
-                          id:
-                            type: integer
-                            example: 25  
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 25  
                       suchworte: 
                         type: array
                         items:
-                          suchwort:
-                            type: string
-                            example: Aktivierung (§ 45 SGB III)               
+                          type: object
+                          properties:
+                            suchwort:
+                              type: string
+                              example: Aktivierung (§ 45 SGB III)               
                       systematiken: 
                         type: array
                         items:
@@ -414,19 +418,19 @@ components:
                       homepage:
                         type: string
                   unterrichtsform:
-                  type: object
-                  properties:
-                    id: 
-                      type: integer
-                      example: 0
-                    bezeichnung: 
-                      type: string
-                      example: Einzelmaßnahme
+                    type: object
+                    properties:
+                      id: 
+                        type: integer
+                        example: 0
+                      bezeichnung: 
+                        type: string
+                        example: Einzelmaßnahme
                   gueltigVon: 
-                      type: string
+                      type: integer
                       example: 1599688800000
                   gueltigBis: 
-                      type: string
+                      type: integer
                       example: 1694210400000
                   massnahmeZeiten: 
                       type: string
@@ -558,10 +562,10 @@ components:
             UNTERRICHSFORMEN: 
               type: object
               properties: 
-                0:
+                '0':
                   type: integer
                   example: 308
-                1:
+                '1':
                   type: integer
                   example: 406
             ANBIETER: 
@@ -579,11 +583,11 @@ components:
               type: object
               properties:
                 MBV:
-                  type: string
+                  type: integer
                   description: Mecklenburg-Vorpommern
                   example: 9098
                 SAN:
-                  type: string
+                  type: integer
                   description: Sachsen-Anhalt
                   example: 9098
                 RPF:
@@ -591,67 +595,67 @@ components:
                   description: Rheinland-Pfalz
                   example: 9098
                 THÜ:
-                  type: string
+                  type: integer
                   description: Thüringen
                   example: 9098
                 -:
-                  type: string
+                  type: integer
                   description: überregionale Angebote
                   example: 9098
                 SLH:
-                  type: string
+                  type: integer
                   description: Schleswig-Holstein
                   example: 9098
                 BER:
-                  type: string
+                  type: integer
                   description: Berlin
                   example: 9098
                 iCH:
-                  type: string
+                  type: integer
                   description: internationale Angebote aus der Schweiz
                   example: 9098
                 BRA:
-                  type: string
+                  type: integer
                   description: Brandenburg
                   example: 9098
                 NRW:
-                  type: string
+                  type: integer
                   description: Nordrhein-Westfalen
                   example: 9098
                 SAA:
-                  type: string
+                  type: integer
                   description: Sachsen-Anhalt
                   example: 9098
                 SAC:
-                  type: string
+                  type: integer
                   description: Sachsen
                   example: 9098
                 BRE:
-                  type: string
+                  type: integer
                   description: Bremen
                   example: 9098
                 HAM:
-                  type: string
+                  type: integer
                   description: Hamburg
                   example: 9098
                 HES:
-                  type: string
+                  type: integer
                   description: Hessen
                   example: 9098
                 BAW:
-                  type: string
+                  type: integer
                   description: Baden-Württemberg
                   example: 9098
                 iA:
-                  type: string
+                  type: integer
                   description: internationale Angebote aus Österreich
                   example: 9098
                 BAY:
-                  type: string
+                  type: integer
                   description: Bayern
                   example: 9098
                 NDS:
-                  type: string
+                  type: integer
                   description: Niedersachsen
                   example: 9098
             ANZAHL_GESAMT: 
