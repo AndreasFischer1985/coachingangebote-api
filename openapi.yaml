@@ -1,4 +1,4 @@
-﻿openapi: "3.0.0"
+openapi: "3.0.0"
 info:
   description: |
    Eine der größten WDatenbanken zu Coaching-/Aktivierungsangeboten Deutschlands durchsuchen. 
@@ -23,8 +23,9 @@ servers:
 paths:
   /pc/v1/aktivierungsangebote:
     get:
-      summary:	 Coaching-/Aktivierungsangebote
+      summary: Coaching-/Aktivierungsangebote
       description: "Die Suche nach Coaching-/Aktivierungsangeboten ermöglicht verfügbare Weiterbildungsangebote mit verschiedenen GET-Parametern zu filtern."
+      operationId: aktivierungsangebote
       responses:
         '200':
             description: OK
@@ -108,12 +109,12 @@ paths:
           schema:
             type: string
             enum:
-                - Bundesweit
-                - 25
-                - 50
-                - 100
-                - 150
-                - 200
+                - 'Bundesweit'
+                - '25'
+                - '50'
+                - '100'
+                - '150'
+                - '200'
           description: Umkreis - Bundesweit=Bundesweit; 25=25 km; 50=50 km; 100=100 km; 150=150 km; 200=200 km.
           example: "Bundesweit"
           required: false
@@ -133,7 +134,7 @@ paths:
         - in: query
           name: deufoev
           schema:
-            type: integer
+            type: boolean
             enum:
                 - true
                 - false               
@@ -144,7 +145,7 @@ paths:
         - in: query
           name: sort
           schema:
-            type: strin
+            type: string
             enum:
                 - ta
                 - tz               
@@ -196,147 +197,147 @@ components:
                       inhalt:
                         type: string 
 
-                    anbieter:   
-                      type: object
-                      properties:   
-                        id:
-                          type: integer
-                          example: 250563  
-                        name:
-                          type: string
-                        deuFoeV:
-                          type: string
-                        telefonVorwahl:
-                          type: string
-                          example: '02241'
-                        telefonDurchwahl:
-                          type: string
-                        mobilVorwahl:
-                          type: string
-                        mobilDurchwahl:
-                          type: string
-                        faxVorwahl:
-                          type: string
-                        faxDurchwahl:
-                          type: string
-                        homepage:
-                          type: string
-                        email:
-                          type: string
-                        adresse:
-                          type: object
-                          properties:
-                            id: 
-                              type: integer
-                              example: 3516303
-                            bezeichnung: 
-                              type: string
-                            hinweise: 
-                              type: string
-                            strasse: 
-                              type: string
-                            ortStrasse:
-                              type: object
-                              properties:
-                                id: 
-                                  type: integer
-                                  example: 21248
-                                plz: 
-                                  type: string
-                                  example: '53757'
-                                name: 
-                                  type: string
-                                  example: Sankt Augustin
-                                laengengrad: 
-                                  type: number
-                                  example: 17.1853  
-                                breitengrad: 
-                                  type: number
-                                  example: 40.7733  
-                                koordinaten:
-                                  type: object
-                                  properties:
-                                    lat:
-                                      type: number
-                                      example: 17.1853
-                                    lon:
-                                      type: number
-                                      example: 40.7733 
-                                land:
-                                  type: object
-                                  properties:   
-                                    id: 
-                                      type: integer           
-                                    name: 
-                                      type: string  
-                                      example: Bayern
-                                    laenderCode: 
-                                      type: string 
-                                      example: D 
-                                    bundeslandCode: 
-                                      type: string    
-                                      example: BAY    
-                                    code: 
-                                      type: string    
-                                      example: BAY   
-                            dienstleistungen: 
-                              type: string
-                            telefonVorwahl: 
-                              type: string 
-                            telefonDurchwahl: 
-                              type: string        
-                            mobilVorwahl: 
-                              type: string 
-                            mobilDurchwahl: 
-                              type: string    
-                            faxVorwahl: 
-                              type: string 
-                            faxDurchwahl: 
-                              type: string    
-                            email: 
-                              type: string 
-                            homepage: 
-                              type: string   
-                        logo:
-                          type: object
-                          properties:
-                            id: 
-                              type: integer
-                              example: 38803
-                            url: 
-                              type: string
-                            externalURL: 
-                              type: string
-                    zertifizierer:
-                      type: array
-                      items:
-                        id:
-                          type: integer
-                          example: 25  
-                    suchworte: 
-                      type: array
-                      items:
-                        suchwort:
-                          type: string
-                          example: Aktivierung (§ 45 SGB III)               
-                    systematiken: 
-                      type: array
-                      items:
+                      anbieter:   
                         type: object
-                        properties: 
+                        properties:   
                           id:
                             type: integer
-                            example: 131172
-                          codeNr:
+                            example: 250563  
+                          name:
                             type: string
-                            example: SA 01
-                          bezeichnung:
+                          deuFoeV:
                             type: string
-                            example: '§ 45 Abs. 1 Nr. 1 SGB III: Heranführung an den Ausbildungs- und Arbeitsmarkt sowie Feststellung, Verringerung oder Beseitigung von Vermittlungshemmnissen'      
-                          suchworte:
-                            type: array
-                            items:
+                          telefonVorwahl:
+                            type: string
+                            example: '02241'
+                          telefonDurchwahl:
+                            type: string
+                          mobilVorwahl:
+                            type: string
+                          mobilDurchwahl:
+                            type: string
+                          faxVorwahl:
+                            type: string
+                          faxDurchwahl:
+                            type: string
+                          homepage:
+                            type: string
+                          email:
+                            type: string
+                          adresse:
+                            type: object
+                            properties:
+                              id: 
+                                type: integer
+                                example: 3516303
+                              bezeichnung: 
+                                type: string
+                              hinweise: 
+                                type: string
+                              strasse: 
+                                type: string
+                              ortStrasse:
+                                type: object
+                                properties:
+                                  id: 
+                                    type: integer
+                                    example: 21248
+                                  plz: 
+                                    type: string
+                                    example: '53757'
+                                  name: 
+                                    type: string
+                                    example: Sankt Augustin
+                                  laengengrad: 
+                                    type: number
+                                    example: 17.1853  
+                                  breitengrad: 
+                                    type: number
+                                    example: 40.7733  
+                                  koordinaten:
+                                    type: object
+                                    properties:
+                                      lat:
+                                        type: number
+                                        example: 17.1853
+                                      lon:
+                                        type: number
+                                        example: 40.7733 
+                                  land:
+                                    type: object
+                                    properties:   
+                                      id: 
+                                        type: integer           
+                                      name: 
+                                        type: string  
+                                        example: Bayern
+                                      laenderCode: 
+                                        type: string 
+                                        example: D 
+                                      bundeslandCode: 
+                                        type: string    
+                                        example: BAY    
+                                      code: 
+                                        type: string    
+                                        example: BAY   
+                              dienstleistungen: 
+                                type: string
+                              telefonVorwahl: 
+                                type: string 
+                              telefonDurchwahl: 
+                                type: string        
+                              mobilVorwahl: 
+                                type: string 
+                              mobilDurchwahl: 
+                                type: string    
+                              faxVorwahl: 
+                                type: string 
+                              faxDurchwahl: 
+                                type: string    
+                              email: 
+                                type: string 
+                              homepage: 
+                                type: string   
+                          logo:
+                            type: object
+                            properties:
+                              id: 
+                                type: integer
+                                example: 38803
+                              url: 
+                                type: string
+                              externalURL: 
+                                type: string
+                      zertifizierer:
+                        type: array
+                        items:
+                          id:
+                            type: integer
+                            example: 25  
+                      suchworte: 
+                        type: array
+                        items:
+                          suchwort:
+                            type: string
+                            example: Aktivierung (§ 45 SGB III)               
+                      systematiken: 
+                        type: array
+                        items:
+                          type: object
+                          properties: 
+                            id:
+                              type: integer
+                              example: 131172
+                            codeNr:
                               type: string
+                              example: SA 01
+                            bezeichnung:
+                              type: string
+                              example: '§ 45 Abs. 1 Nr. 1 SGB III: Heranführung an den Ausbildungs- und Arbeitsmarkt sowie Feststellung, Verringerung oder Beseitigung von Vermittlungshemmnissen'      
+                            suchworte:
+                              type: array
+                              items:
+                                type: string
                   adresse:
                     type: object
                     properties:
