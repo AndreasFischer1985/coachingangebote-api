@@ -1,7 +1,7 @@
 openapi: "3.0.0"
 info:
   description: |
-   Eine der größten WDatenbanken zu Coaching-/Aktivierungsangeboten Deutschlands durchsuchen. 
+   Eine der größten Datenbanken zu Coaching-/Aktivierungsangeboten Deutschlands durchsuchen. 
    
    Die Authentifizierung funktioniert per OAuth 2 Client Credentials mit JWTs. Folgende Client-Credentials können dafür verwendet werden:
    
@@ -591,7 +591,7 @@ components:
                   description: Sachsen-Anhalt
                   example: 9098
                 RPF:
-                  type: string
+                  type: integer
                   description: Rheinland-Pfalz
                   example: 9098
                 THÜ:
