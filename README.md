@@ -4,7 +4,7 @@ Eine der größten Datenbanken zu Coaching-/Aktivierungsangeboten Deutschlands d
 
 ## Authentifizierung
 Die Authentifizierung funktioniert per OAuth 2 Client Credentials mit JWTs.
-Client Credentials sind folgende:
+Client Credentials sind, wie sich z.B. einem GET-request an https://web.arbeitsagentur.de/coachingundaktivierung entnehmen lässt, folgende:
 
 **ClientID:** ee971dcb-96fa-47b3-b2be-00863e4fc88b
 
