@@ -6,19 +6,18 @@ Eine der größten Datenbanken zu Coaching-/Aktivierungsangeboten Deutschlands d
 Die Authentifizierung funktioniert per OAuth 2 Client Credentials mit JWTs.
 Client Credentials sind, wie sich z.B. einem GET-request an https://web.arbeitsagentur.de/coachingundaktivierung entnehmen lässt, folgende:
 
-**ClientID:** ee971dcb-96fa-47b3-b2be-00863e4fc88b
+**client_id:** ee971dcb-96fa-47b3-b2be-00863e4fc88b
 
-**ClientSecret:** 1050e0b7-6db8-49e8-aff9-0e58e556681f
+**client_secret:** 1050e0b7-6db8-49e8-aff9-0e58e556681f
+
+**grant_type:** client_credentials
+
+Die Credentials sind im body eines POST-request an https://rest.arbeitsagentur.de/oauth/gettoken_cc zu senden.
 
 ```bash
-curl \
--H 'Host: rest.arbeitsagentur.de' \
--H 'Accept: */*' \
--H 'Content-Type: application/x-www-form-urlencoded; charset=utf-8' \
--H 'Accept-Language: de,en-US;q=0.7,en;q=0.3' \
--H 'User-Agent:  Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0' \
---data-binary "client_id=ee971dcb-96fa-47b3-b2be-00863e4fc88b&client_secret=1050e0b7-6db8-49e8-aff9-0e58e556681f&grant_type=client_credentials" \
---compressed 'https://rest.arbeitsagentur.de/oauth/gettoken_cc'
+token=$(curl \
+-d "client_id=ee971dcb-96fa-47b3-b2be-00863e4fc88b&client_secret=1050e0b7-6db8-49e8-aff9-0e58e556681f&grant_type=client_credentials" \
+-X POST 'https://rest.arbeitsagentur.de/oauth/gettoken_cc' |grep -Eo '[^"]{500,}'|head -n 1)
 ```
 
 Der generierte Token muss bei folgenden GET-requests an https://rest.arbeitsagentur.de/infosysbub/avgs/avgs/pc/v1/aktivierungsangebote im header als 'OAuthAccessToken' inkludiert werden.
@@ -113,16 +112,7 @@ DEUFOEV: true = (nur) Anbieter berufsbezogener Sprachförderung Deutsch (DeuFöV
 ### Beispiel:
 
 ```bash
-co=$(curl -m 60 -H "Host: rest.arbeitsagentur.de" \
--H "User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0" \
--H "Accept: application/json, text/plain, */*" \
--H "Accept-Language: de,en-US;q=0.7,en;q=0.3" \
--H "Accept-Encoding: gzip, deflate, br" \
--H "Origin: https://web.arbeitsagentur.de" \
--H "DNT: 1" \
--H "Connection: keep-alive" \
--H "Pragma: no-cache" \
--H "Cache-Control: no-cache" \
+co=$(curl -m 60 \
 -H "OAuthAccessToken: $token" \
 'https://rest.arbeitsagentur.de/infosysbub/avgs/pc/v1/aktivierungsangebote?mz=SA%2001&uk=Bundesweit&deufoev=false&page=1')
 ```
