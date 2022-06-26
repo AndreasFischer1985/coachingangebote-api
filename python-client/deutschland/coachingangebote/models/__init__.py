@@ -26,54 +26,56 @@ from deutschland.coachingangebote.model.response_aggregations_unterrichsformen i
     ResponseAggregationsUNTERRICHSFORMEN,
 )
 from deutschland.coachingangebote.model.response_embedded import ResponseEmbedded
-from deutschland.coachingangebote.model.response_embedded_abstaende import (
-    ResponseEmbeddedAbstaende,
+from deutschland.coachingangebote.model.response_embedded_termine_inner import (
+    ResponseEmbeddedTermineInner,
 )
-from deutschland.coachingangebote.model.response_embedded_adresse import (
-    ResponseEmbeddedAdresse,
+from deutschland.coachingangebote.model.response_embedded_termine_inner_abstaende_inner import (
+    ResponseEmbeddedTermineInnerAbstaendeInner,
 )
-from deutschland.coachingangebote.model.response_embedded_angebot import (
-    ResponseEmbeddedAngebot,
+from deutschland.coachingangebote.model.response_embedded_termine_inner_abstaende_inner_ort import (
+    ResponseEmbeddedTermineInnerAbstaendeInnerOrt,
 )
-from deutschland.coachingangebote.model.response_embedded_angebot_anbieter import (
-    ResponseEmbeddedAngebotAnbieter,
+from deutschland.coachingangebote.model.response_embedded_termine_inner_adresse import (
+    ResponseEmbeddedTermineInnerAdresse,
 )
-from deutschland.coachingangebote.model.response_embedded_angebot_anbieter_adresse import (
-    ResponseEmbeddedAngebotAnbieterAdresse,
+from deutschland.coachingangebote.model.response_embedded_termine_inner_angebot import (
+    ResponseEmbeddedTermineInnerAngebot,
 )
-from deutschland.coachingangebote.model.response_embedded_angebot_anbieter_adresse_ort_strasse import (
-    ResponseEmbeddedAngebotAnbieterAdresseOrtStrasse,
+from deutschland.coachingangebote.model.response_embedded_termine_inner_angebot_anbieter import (
+    ResponseEmbeddedTermineInnerAngebotAnbieter,
 )
-from deutschland.coachingangebote.model.response_embedded_angebot_anbieter_adresse_ort_strasse_koordinaten import (
-    ResponseEmbeddedAngebotAnbieterAdresseOrtStrasseKoordinaten,
+from deutschland.coachingangebote.model.response_embedded_termine_inner_angebot_anbieter_adresse import (
+    ResponseEmbeddedTermineInnerAngebotAnbieterAdresse,
 )
-from deutschland.coachingangebote.model.response_embedded_angebot_anbieter_adresse_ort_strasse_land import (
-    ResponseEmbeddedAngebotAnbieterAdresseOrtStrasseLand,
+from deutschland.coachingangebote.model.response_embedded_termine_inner_angebot_anbieter_adresse_ort_strasse import (
+    ResponseEmbeddedTermineInnerAngebotAnbieterAdresseOrtStrasse,
 )
-from deutschland.coachingangebote.model.response_embedded_angebot_anbieter_logo import (
-    ResponseEmbeddedAngebotAnbieterLogo,
+from deutschland.coachingangebote.model.response_embedded_termine_inner_angebot_anbieter_adresse_ort_strasse_koordinaten import (
+    ResponseEmbeddedTermineInnerAngebotAnbieterAdresseOrtStrasseKoordinaten,
 )
-from deutschland.coachingangebote.model.response_embedded_angebot_suchworte import (
-    ResponseEmbeddedAngebotSuchworte,
+from deutschland.coachingangebote.model.response_embedded_termine_inner_angebot_anbieter_adresse_ort_strasse_land import (
+    ResponseEmbeddedTermineInnerAngebotAnbieterAdresseOrtStrasseLand,
 )
-from deutschland.coachingangebote.model.response_embedded_angebot_systematiken import (
-    ResponseEmbeddedAngebotSystematiken,
+from deutschland.coachingangebote.model.response_embedded_termine_inner_angebot_anbieter_logo import (
+    ResponseEmbeddedTermineInnerAngebotAnbieterLogo,
 )
-from deutschland.coachingangebote.model.response_embedded_angebot_zertifizierer import (
-    ResponseEmbeddedAngebotZertifizierer,
+from deutschland.coachingangebote.model.response_embedded_termine_inner_angebot_suchworte_inner import (
+    ResponseEmbeddedTermineInnerAngebotSuchworteInner,
 )
-from deutschland.coachingangebote.model.response_embedded_ansprechpartner import (
-    ResponseEmbeddedAnsprechpartner,
+from deutschland.coachingangebote.model.response_embedded_termine_inner_angebot_systematiken_inner import (
+    ResponseEmbeddedTermineInnerAngebotSystematikenInner,
 )
-from deutschland.coachingangebote.model.response_embedded_ort import ResponseEmbeddedOrt
-from deutschland.coachingangebote.model.response_embedded_rollen import (
-    ResponseEmbeddedRollen,
+from deutschland.coachingangebote.model.response_embedded_termine_inner_angebot_zertifizierer_inner import (
+    ResponseEmbeddedTermineInnerAngebotZertifiziererInner,
 )
-from deutschland.coachingangebote.model.response_embedded_termine import (
-    ResponseEmbeddedTermine,
+from deutschland.coachingangebote.model.response_embedded_termine_inner_ansprechpartner_inner import (
+    ResponseEmbeddedTermineInnerAnsprechpartnerInner,
 )
-from deutschland.coachingangebote.model.response_embedded_unterrichtsform import (
-    ResponseEmbeddedUnterrichtsform,
+from deutschland.coachingangebote.model.response_embedded_termine_inner_ansprechpartner_inner_rollen_inner import (
+    ResponseEmbeddedTermineInnerAnsprechpartnerInnerRollenInner,
+)
+from deutschland.coachingangebote.model.response_embedded_termine_inner_unterrichtsform import (
+    ResponseEmbeddedTermineInnerUnterrichtsform,
 )
 from deutschland.coachingangebote.model.response_links import ResponseLinks
 from deutschland.coachingangebote.model.response_links_first import ResponseLinksFirst
