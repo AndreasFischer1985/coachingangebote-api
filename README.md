@@ -17,7 +17,7 @@ Die Credentials sind im body eines POST-request an https://rest.arbeitsagentur.d
 ```bash
 token=$(curl \
 -d "client_id=ee971dcb-96fa-47b3-b2be-00863e4fc88b&client_secret=1050e0b7-6db8-49e8-aff9-0e58e556681f&grant_type=client_credentials" \
--X POST 'https://rest.arbeitsagentur.de/oauth/gettoken_cc' |grep -Eo '[^"]{500,}'|head -n 1)
+-X POST 'https://rest.arbeitsagentur.de/oauth/gettoken_cc' |grep -Eo '[^"]{400,}'|head -n 1)
 ```
 
 Der generierte Token muss bei folgenden GET-requests an https://rest.arbeitsagentur.de/infosysbub/avgs/avgs/pc/v1/aktivierungsangebote im header als 'OAuthAccessToken' inkludiert werden.
