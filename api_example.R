@@ -15,5 +15,5 @@ url="https://rest.arbeitsagentur.de/infosysbub/avgs/pc/v1/aktivierungsangebote?m
 data_request=httr::GET(url=url, httr::add_headers(.headers=c("OAuthAccessToken"=token)),
         config=httr::config(connecttimeout=60))
 data_request
-data=rawToChar(httr::content(data_request))
+data=rjson::fromJSON(rawToChar(httr::content(data_request)))
 
