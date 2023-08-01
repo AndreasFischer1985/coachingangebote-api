@@ -22,6 +22,9 @@ token=$(curl \
 
 Der generierte Token muss bei folgenden GET-requests an https://rest.arbeitsagentur.de/infosysbub/avgs/avgs/pc/v1/aktivierungsangebote im header als 'OAuthAccessToken' inkludiert werden.
 
+**Hinweis:** Alternativ kann man bei folgenden GET-requests auch direkt die *client_id* als Header-Parameter *'X-API-Key'* übergeben - *'OAuthAccessToken'* ist in diesem Fall nicht erforderlich. 🚀
+
+
 **URL:** https://rest.arbeitsagentur.de/infosysbub/avgs/avgs/pc/v1/aktivierungsangebote
 
 

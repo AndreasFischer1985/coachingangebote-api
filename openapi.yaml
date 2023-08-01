@@ -9,7 +9,7 @@ info:
    
    **ClientSecret:** 1050e0b7-6db8-49e8-aff9-0e58e556681f
    
-   **Achtung**: der generierte Token muss bei folgenden GET-requests im header als 'OAuthAccessToken' inkludiert werden. 
+   **Achtung**: der generierte Token muss bei folgenden GET-requests im header als *'OAuthAccessToken'* inkludiert werden. Alternativ kann man bei folgenden GET-requests auch direkt die *client_id* als Header-Parameter *'X-API-Key'* übergeben - *'OAuthAccessToken'* ist in diesem Fall nicht erforderlich. 🚀
   version: "1.0.0"
   title: "Bundesagentur für Arbeit: Coachingangebote API"
   contact:
@@ -154,19 +154,18 @@ paths:
           required: false
 
 
-security: 
-  - clientCredAuth: 
-    - "read"
 
-components: 
+security:
+  - APIKeyHeaders: []
+
+components:
   securitySchemes:
-    clientCredAuth:    # <---- arbitrary name
-      type: oauth2
-      description: "Die Authentifizierung funktioniert per OAuth-2-Client Credentials mit JWTs. Client Credentials sind folgende:<br><br> **ClientID:** ee971dcb-96fa-47b3-b2be-00863e4fc88b <br> **ClientSecret:** 1050e0b7-6db8-49e8-aff9-0e58e556681f "
-      flows:
-        clientCredentials:  
-          tokenUrl: https://rest.arbeitsagentur.de/oauth/gettoken_cc
-          scopes: {}
+    APIKeyHeaders:    
+      type: apiKey
+      in: header
+      name: X-API-Key
+      description: "X-API-Key ist die Client-ID ee971dcb-96fa-47b3-b2be-00863e4fc88b"
+      
   schemas:    
     Response:
       type: object
